@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健身动作API调用工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>健身动作API调用工具</h1>
+            <p>轻松查询健身动作数据</p>
+        </header>
+        
+        <div class="query-section">
+            <h2>选择查询类型</h2>
+            <div class="query-types">
+                <button class="query-btn active" data-type="all">所有动作</button>
+                <button class="query-btn" data-type="muscle">按肌肉群组查询</button>
+                <button class="query-btn" data-type="equipment">按器材查询</button>
+            </div>
+            
+            <div class="query-params" id="muscleParams" style="display: none;">
+                <label for="muscle-group">肌肉群组:</label>
+                <select id="muscle-group">
+                    <option value="">-- 选择肌肉群组 --</option>
+                    <option value="胸部">胸部</option>
+                    <option value="背部">背部</option>
+                    <option value="肩部">肩部</option>
+                    <option value="手臂">手臂</option>
+                    <option value="腿部">腿部</option>
+                    <option value="腹部">腹部</option>
+                    <option value="臀部">臀部</option>
+                </select>
+            </div>
+            
+            <div class="query-params" id="equipmentParams" style="display: none;">
+                <label for="equipment-type">器材类型:</label>
+                <select id="equipment-type">
+                    <option value="">-- 选择器材类型 --</option>
+                    <option value="哑铃">哑铃</option>
+                    <option value="杠铃">杠铃</option>
+                    <option value="器械">器械</option>
+                    <option value="徒手">徒手</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+            
+            <button id="queryBtn" class="submit-btn">查询</button>
+        </div>
+        
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>加载中...</p>
+        </div>
+        
+        <div class="results-section">
+            <h2>健身动作</h2>
+            <div class="api-url" id="apiUrl" style="display: none;"></div>
+            <div class="results-container">
+                <div id="results"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>数据来源: <a href="https://jeffrey-done.github.io/fitness-api/" target="_blank">健身动作API</a></p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
